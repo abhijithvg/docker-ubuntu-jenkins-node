@@ -50,13 +50,6 @@ RUN adduser --quiet jenkins
 # Set password for the jenkins user (you may want to alter this).
 RUN echo "jenkins:jenkins" | chpasswd
 
-# Maven Configurations & Installation
-RUN mkdir /home/jenkins/.m2
-
-RUN chown -R jenkins:jenkins /home/jenkins/.m2/ 
-
-RUN apt-get install -y maven
-
 # Standard SSH port
 EXPOSE 22
 
